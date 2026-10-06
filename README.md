@@ -14,23 +14,50 @@ The most important columns in the dataset are:
 * `pollutant_avg` - The average reading for that pollutant
 * `latitude` and `longitude` - The exact location of the station
 
-## Project Breakdown
+## Project Structure
 
-I split the project into 6 simple notebooks to keep the work organized:
+I have organized the project into the following folder structure:
 
-1. **01 Data Collection:** Just loading the raw CSV file to check the shape, columns, and see how many missing values we have.
-2. **02 Data Cleaning:** Fixing messy text (like removing underscores in state names), dropping rows that don't have average readings, and saving a clean version of the data into the processed folder.
-3. **03 Exploratory Data Analysis:** Getting basic stats, making histograms, and grouping the data to find the highest PM2.5 readings.
-4. **04 Statistical Analysis:** Using scipy to run a Pearson correlation (checking if PM2.5 and PM10 are related) and doing a Mann-Whitney U test to compare the most and least polluted states.
-5. **05 Visualization:** Making bar charts and scatter plots with matplotlib and seaborn to show the findings visually.
-6. **06 Final Analysis:** Building a final scorecard table showing the average pollution for each state and writing down the conclusion.
+```text
+Data-Analysis-Python-Project/
+│
+├── README.md
+│
+├── Dataset/
+│   ├── dataset.csv                  (Raw data)
+│   └── cleaned dataset.csv          (Cleaned data)
+│
+├── Notebook/
+│   └── Data_Analysis_EDA.ipynb      (All-in-one Jupyter notebook)
+│
+├── Python/
+│   ├── data_loading.py              (Script to load data)
+│   ├── data_cleaning.py             (Script to clean data)
+│   ├── exploratory_analysis.py      (Script for EDA & stats)
+│   └── data_visualization.py        (Script to generate charts)
+│
+├── Visualizations/
+│   ├── distribution_analysis.png
+│   ├── trend_analysis.png
+│   ├── category_analysis.png
+│   └── correlation_analysis.png
+│
+├── Screenshots/                     (Place screenshots of your output here)
+│
+└── Documentation/                   (Any extra docs)
+```
 
 ## How to run my code
 
+**Running the Notebook:**
 1. Open your terminal in the main project folder.
-2. Install the required libraries by running: `pip install -r requirements.txt`
-3. Make sure the raw data is inside `data/raw/air_quality_raw.csv`
-4. Type `jupyter notebook` in your terminal to open it up.
-5. Go into the `notebooks/` folder and run the files in order from 01 to 06.
+2. Type `jupyter notebook` and press enter.
+3. Open `Notebook/Data_Analysis_EDA.ipynb` and run all cells.
 
-Note: Since this is just a single snapshot of data from one day, we can't look at trends over time, but it still gives a good idea of which areas are highly polluted!
+**Running the Python Scripts:**
+You can also run the individual python scripts from the terminal:
+1. `cd Python`
+2. `python data_loading.py` (Loads and checks the raw data)
+3. `python data_cleaning.py` (Cleans data and saves it to the Dataset folder)
+4. `python exploratory_analysis.py` (Prints out the statistical findings)
+5. `python data_visualization.py` (Saves all the charts into the Visualizations folder)
