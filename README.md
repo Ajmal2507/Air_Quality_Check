@@ -1,63 +1,93 @@
 # Air Quality Analysis in India (EDA Project)
 
-This is my exploratory data analysis (EDA) project for class. I'm analyzing air quality data from different monitoring stations across India to see which states and cities are the most polluted.
+**Industry Name:** Environmental Data Analysis
 
-**Author:** Ajmal  
-**Libraries used:** pandas, numpy, scipy, matplotlib, seaborn
+## Problem Statement
+The project aims to analyze air quality data from various monitoring stations across India to determine pollution levels and identify the most polluted states and cities based on critical pollutants like PM2.5 and PM10.
 
-## About the Data
-I got the dataset from the open government data portal (data.gov.in). It's a snapshot of air quality readings taken on Jan 30, 2024. 
+## Proposed Solution / Analysis Questions
+Using Python data analysis, the objective is to clean and explore the data, calculate summary statistics, determine average pollutant values by state and city, evaluate the percentage of PM2.5 readings in the "Poor" category (>90), and analyze the statistical correlation between PM2.5 and PM10 levels.
 
-The most important columns in the dataset are:
-* `state`, `city`, `station` - Where the reading was taken
-* `pollutant_id` - The type of pollution being measured (like PM2.5, PM10, SO2, etc.)
-* `pollutant_avg` - The average reading for that pollutant
-* `latitude` and `longitude` - The exact location of the station
+## Dataset Name
+Air Quality Data (Snapshot of Jan 30, 2024)
 
-## Project Structure
+## Dataset Source
+Open Government Data Portal (data.gov.in)
 
-I have organized the project into the following folder structure:
+## Tools & Technologies
+* Python
+* Jupyter Notebook
+* NumPy
+* Pandas
+* Matplotlib
+* Seaborn
+* SciPy
+
+## Project Workflow
+Industry Selection → Problem Identification → Dataset Collection → Data Cleaning → Data Transformation → Data Analysis → Data Visualization → Insights → Recommendations
+
+## Data Analysis & Visualization
+The following analyses and visualizations were performed in the project:
+* **Category Analysis:** Number of readings per pollutant category.
+* **Distribution Analysis:** Histogram showing the frequency distribution of PM2.5 average readings.
+* **Trend Analysis:** Bar chart identifying the Top 10 States with the highest average PM2.5 levels.
+* **Correlation Analysis:** Scatter plot evaluating the relationship between PM10 and PM2.5 averages per station.
+
+## Key Insights
+* Calculated summary statistics and average pollutant values across the dataset.
+* Identified the Top 10 states and cities suffering from the highest average PM2.5 pollution.
+* Computed the exact number and percentage of PM2.5 readings that exceeded the safe threshold (above 90).
+* Discovered the Pearson correlation coefficient between PM2.5 and PM10 levels across monitoring stations.
+
+## Recommendations
+* **Targeted Interventions:** Focus pollution control measures and funding primarily on the top 10 most polluted states and cities identified in the trend analysis.
+* **Increased Monitoring:** Enhance continuous monitoring and issue public health warnings in areas where PM2.5 readings frequently exceed the threshold of 90.
+* **Policy Formulation:** Formulate state-specific environmental policies targeting the primary sources of PM2.5 and PM10 emissions.
+
+## Visualization Screenshots
+
+### Category Analysis
+![Category Analysis](Visualizations/category_analysis.png)
+
+### Distribution Analysis
+![Distribution Analysis](Visualizations/distribution_analysis.png)
+
+### Trend Analysis
+![Trend Analysis](Visualizations/trend_analysis.png)
+
+### Correlation Analysis
+![Correlation Analysis](Visualizations/correlation_analysis.png)
+
+## Project Folder Structure
 
 ```text
-Data-Analysis-Python-Project/
+Air-Quality-EDA/
 │
 ├── README.md
 │
 ├── Dataset/
-│   ├── dataset.csv                  (Raw data)
-│   └── cleaned dataset.csv          (Cleaned data)
+│   ├── dataset.csv
+│   └── cleaned dataset.csv
 │
 ├── Notebook/
-│   └── Data_Analysis_EDA.ipynb      (All-in-one Jupyter notebook)
+│   └── Data_Analysis_EDA.ipynb
 │
 ├── Python/
-│   ├── data_loading.py              (Script to load data)
-│   ├── data_cleaning.py             (Script to clean data)
-│   ├── exploratory_analysis.py      (Script for EDA & stats)
-│   └── data_visualization.py        (Script to generate charts)
+│   ├── data_loading.py
+│   ├── data_cleaning.py
+│   ├── exploratory_analysis.py
+│   └── data_visualization.py
 │
-├── Visualizations/
-│   ├── distribution_analysis.png
-│   ├── trend_analysis.png
-│   ├── category_analysis.png
-│   └── correlation_analysis.png
-│
-├── Screenshots/                     (Place screenshots of your output here)
-│
-└── Documentation/                   (Any extra docs)
+└── Visualizations/
+    ├── category_analysis.png
+    ├── distribution_analysis.png
+    ├── trend_analysis.png
+    └── correlation_analysis.png
 ```
 
-## How to run my code
-
-**Running the Notebook:**
-1. Open your terminal in the main project folder.
-2. Type `jupyter notebook` and press enter.
-3. Open `Notebook/Data_Analysis_EDA.ipynb` and run all cells.
-
-**Running the Python Scripts:**
-You can also run the individual python scripts from the terminal:
-1. `cd Python`
-2. `python data_loading.py` (Loads and checks the raw data)
-3. `python data_cleaning.py` (Cleans data and saves it to the Dataset folder)
-4. `python exploratory_analysis.py` (Prints out the statistical findings)
-5. `python data_visualization.py` (Saves all the charts into the Visualizations folder)
+## Author
+* **Name:** Ajmal
+* **Student ID:** AF05320136
+* **Organization:** Anudip Foundation
+* **Course:** AIML
+* **Batch Code:** ANP-D744
